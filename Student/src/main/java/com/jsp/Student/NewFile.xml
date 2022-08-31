@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	
+	 
+	<bean name="Student1" class="com.jsp.Student.Student_2bean_class" p:id="111" p:name="jeevan" p:marks="87"></bean>
+	<bean name="Student2" class="com.jsp.Student.Student_2bean_class" p:id="112" p:name="pavan" p:marks="89"></bean>
+	<bean name="Student3" class="com.jsp.Student.Student_2bean_class" p:id="113" p:name="arjun" p:marks="85"></bean>
+	<bean name="Student4" class="com.jsp.Student.Student_2bean_class" p:id="114" p:name="harish" p:marks="93"></bean>
+	
+	<bean name="Branch1" class="com.jsp.Student.Branch" p:Branch_id="101" p:Branch_name="ECE" > 
+	<property name="Set_of_Student">
+	<set>
+	<ref bean="Student1"/>
+    <ref bean="Student2" />
+	</set>
+	</property>
+	</bean>
+	
+	
+	<bean name="Branch2" class="com.jsp.Student.Branch" p:Branch_id="102" p:Branch_name="CSE">
+	<property name="Set_of_Student">
+	<set>
+	<ref bean="Student3"/>
+	<ref bean="Student4"/>
+	</set>
+	</property>
+	</bean>
+	
+	
+	<bean name="college_object1" class="com.jsp.Student.College" p:College_id="1234" p:Colleg_name="PES">
+	<property name="Set_of_branch">
+	<set>
+	<ref  bean="Branch1"/>
+	<ref bean="Branch2"/>
+	</set>
+	</property>
+	</bean>
+</beans>
